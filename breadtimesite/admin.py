@@ -3,8 +3,16 @@ from breadtimesite.models import *
 
 # Register your models here.
 
-admin.site.register(Usuario)
+class AuthorAdmin(admin.ModelAdmin):
+	list_display = ('nome', 'sobrenome', 'email', 'senha')
+
+class PostAdmin(admin.ModelAdmin):
+	list_display = ('usuario',)
+	list_filter = ('data','usuario',)
+		
+
+admin.site.register(Usuario, AuthorAdmin)
 admin.site.register(TipoUsuario)
 admin.site.register(Categoria)
 admin.site.register(ViewsPost)
-admin.site.register(Post)
+admin.site.register(Post,PostAdmin)
