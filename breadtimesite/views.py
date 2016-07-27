@@ -6,7 +6,7 @@ from breadtimesite.models import *
 # Create your views here.
 
 def index(request):
-	return HttpResponse('Ola')
+	return render_to_response('index.html')
 
 
 def exportarfeed(request):
