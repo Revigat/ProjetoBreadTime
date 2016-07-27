@@ -22,5 +22,15 @@
                 <li><a href="#">Login</a></li>
             </ul>
         </div>
+        <div class="container">
+            {% for img in imagem%}
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="img-responsive" src="{{img.imagem}}"> 
+                    </div> 
+                </div>   
+            {%endfor%} 
+            
+        </div>
     </nav>
 {% endblock %}

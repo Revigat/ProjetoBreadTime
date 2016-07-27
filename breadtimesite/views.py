@@ -6,7 +6,8 @@ from breadtimesite.models import *
 # Create your views here.
 
 def index(request):
-	return render_to_response('index.html')
+	imagem = Post.objects.all()
+	return render_to_response('index.html', {'imagem':imagem})
 
 
 def exportarfeed(request):

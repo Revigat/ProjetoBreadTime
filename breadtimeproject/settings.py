@@ -126,3 +126,5 @@ LANGUAGES = (
 STATIC_URL = '/static/'
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
+
+MEDIA_ROOT = "breadtimesite"
