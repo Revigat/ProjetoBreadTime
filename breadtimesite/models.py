@@ -36,7 +36,7 @@ class TipoUsuario(models.Model):
 	def __str__(self):
 		return self.desc
 
-class CategoriaGerenciador(models.Manager):
+class CategoriaGerenciador(models.Manager): #Classe manager para mostrar nomes naturais no json
 	#https://docs.djangoproject.com/en/1.9/topics/serialization/#id2
 	def get_by_natural_key(self,desc):
 		return self.get(desc=desc)
