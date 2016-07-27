@@ -67,7 +67,7 @@ class Post(models.Model):
 	titulo = models.CharField(max_length = 80)
 	conteudo = models.TextField(max_length = 1500)
 	data = models.DateField()
-	imagem = models.CharField(max_length = 150)
+	imagem = models.ImageField(upload_to = 'breadtimesite/static/img/upload')
 	status = models.BooleanField() # caso Post seja rascunho ou postado
 	usuario = models.ForeignKey('Usuario', on_delete = models.CASCADE)
 	categoria = models.ForeignKey('Categoria', on_delete = models.CASCADE)
