@@ -88,10 +88,10 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '@Pro502010',
         'HOST': '127.0.0.1',
-        'PORT': '', #8000 DEFAULT
+        'PORT': '5432', #8000 DEFAULT
     }
 }
-DATABASES['breadtime.db'] = dj_database_url.parse('postgres://postgres:@Pro502010@127.0.0.1:8000/breadtime.db')
+DATABASES['breadtime.db'] = dj_database_url.parse('postgres://postgres:@Pro502010@127.0.0.1:5432/breadtime.db')
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
