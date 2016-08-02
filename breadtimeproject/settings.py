@@ -91,7 +91,7 @@ DATABASES = {
         'PORT': '', #8000 DEFAULT
     }
 }
-DATABASES['breadtime.db'] = dj_database_url.parse('postgres://127.0.0.1')
+DATABASES['breadtime.db'] = dj_database_url.parse('postgres://localhost')
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
