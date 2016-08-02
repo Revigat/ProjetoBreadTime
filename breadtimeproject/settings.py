@@ -14,6 +14,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 import dj_database_url
 
+DATABASES['default'] = dj_database_url.config()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -92,7 +94,6 @@ DATABASES = {
     }
 }
 #DATABASES['breadtime.db'] = dj_database_url.parse('postgres://postgres:@Pro502010@127.0.0.1:5432/breadtime.db')
-DATABASES['postgres'] =  dj_database_url.config('postgres://postgres:@Pro502010@127.0.0.1:6122')
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
