@@ -5,5 +5,6 @@ import breadtimesite.views
 
 urlpatterns = [
 	url(r'^$',breadtimesite.views.index), # versão mais recente do django não suporta string
-	url(r'^exportarfeed/$',breadtimesite.views.exportarfeed),	
+	url(r'^exportarfeed/$',breadtimesite.views.exportarfeed),
+	url(r'^json/',breadtimesite.views.json),	
 ]
