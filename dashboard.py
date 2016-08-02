@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 """
 This file was generated with the customdashboard management command and
 contains the class for the main dashboard.
