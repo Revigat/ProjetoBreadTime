@@ -4,15 +4,14 @@ from breadtimesite.models import *
 
 # Register your models here.
 
-class AuthorAdmin(admin.ModelAdmin):
+class UsuarioAdmin(admin.ModelAdmin): #Mostra os campos nas colunas
 	list_display = ('nome', 'sobrenome', 'email', 'senha')
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin): # Cria o Filtro na página do administrador
 	list_display = ('usuario', 'data','categoria')
 	list_filter = ('data','usuario',)
 
-admin.site.register(Usuario, AuthorAdmin)
-admin.site.register(TipoUsuario)
-admin.site.register(Categoria,)
+#admin.site.register(UsuarioAdmin) #Autoriza mostrar as colunas
+admin.site.register(Categoria)
 admin.site.register(ViewsPost)
-admin.site.register(Post,PostAdmin)
+admin.site.register(Post)#Autoriza a criacao do filto

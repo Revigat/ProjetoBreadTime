@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.9/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
-"""
+""" 
 
 import os
 
@@ -81,8 +81,13 @@ WSGI_APPLICATION = 'breadtimeproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'breadtime.db',
+        'USER': 'postgres',
+        'PASSWORD': '@Pro502010',
+        'HOST': '127.0.0.1',
+        'PORT': '', #8000 DEFAULT
     }
 }
 
