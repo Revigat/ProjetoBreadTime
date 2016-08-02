@@ -14,7 +14,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 import dj_database_url
 
-DATABASES['default'] = dj_database_url.config()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -86,14 +85,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'breadtime.db',
-        'USER': 'postgres',
-        'PASSWORD': '@Pro502010',
+        'NAME': 'ddht9v11rfd9a5',
+        'USER': 'tgogxtfgyhfxhs',
+        'PASSWORD': 'qB9SuTqcttiR04M6P0AXpuzcGv',
         'HOST': '127.0.0.1',
-        'PORT': '6122', #8000 DEFAULT
+        'PORT': '5432', #8000 DEFAULT
     }
 }
-#DATABASES['breadtime.db'] = dj_database_url.parse('postgres://postgres:@Pro502010@127.0.0.1:5432/breadtime.db')
+DATABASES['default'] = dj_database_url.parse('postgres://tgogxtfgyhfxhs:qB9SuTqcttiR04M6P0AXpuzcGv@ec2-54-225-93-34.compute-1.amazonaws.com:5432/ddht9v11rfd9a5')
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
