@@ -16,4 +16,5 @@ from whitenoise.django import DjangoWhiteNoise
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "breadtimeproject.settings")
 
 application = get_wsgi_application()
-application = DjangoWhiteNoise(application) #servir arquivos estaticos 
+application = DjangoWhiteNoise(application)
+# Servir arquivos estaticos

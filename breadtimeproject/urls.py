@@ -21,5 +21,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('breadtimesite.urls')),
-    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
+    url(r'^grappelli/', include('grappelli.urls')),
+    # Grappelli URLS
 ]

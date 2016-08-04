@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.9/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.9/ref/settings/
-""" 
+"""
 
 import os
 import dj_database_url
@@ -84,15 +84,17 @@ WSGI_APPLICATION = 'breadtimeproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'NAME': 'ddht9v11rfd9a5',
         'USER': 'tgogxtfgyhfxhs',
         'PASSWORD': 'qB9SuTqcttiR04M6P0AXpuzcGv',
         'HOST': '127.0.0.1',
-        'PORT': '5432', #8000 DEFAULT
+        'PORT': '5432',
+        # 8000 DEFAULT
     }
 }
-DATABASES['default'] = dj_database_url.parse('postgres://tgogxtfgyhfxhs:qB9SuTqcttiR04M6P0AXpuzcGv@ec2-54-225-93-34.compute-1.amazonaws.com:5432/ddht9v11rfd9a5')
+DATABASES['default'] = dj_database_url.parse(
+    'postgres://tgogxtfgyhfxhs:qB9SuTqcttiR04M6P0AXpuzcGv@ec2-54-225-93-34.compute-1.amazonaws.com:5432/ddht9v11rfd9a5')
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
