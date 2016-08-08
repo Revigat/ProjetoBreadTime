@@ -85,9 +85,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'ddht9v11rfd9a5',
-        'USER': 'tgogxtfgyhfxhs',
-        'PASSWORD': 'qB9SuTqcttiR04M6P0AXpuzcGv',
+        'NAME': 'nome no heroku',
+        'USER': 'user do heroku',
+        'PASSWORD': 'pass do heroku',
         'HOST': '127.0.0.1',
         'PORT': '5432',
         # 8000 DEFAULT
