@@ -37,7 +37,7 @@ class Post(models.Model):
     contview = models.IntegerField()
     # caso Post seja rascunho ou postado
     usuario = models.ForeignKey(User)
-    categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
+    categoria = models.ForeignKey('CategoriaPost', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.titulo
