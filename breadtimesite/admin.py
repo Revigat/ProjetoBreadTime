@@ -17,6 +17,5 @@ class PostAdmin(admin.ModelAdmin):
 
 # admin.site.register(UsuarioAdmin) #Autoriza mostrar as colunas
 admin.site.register(Categoria)
-admin.site.register(ViewsPost)
 admin.site.register(Post)
 # Autoriza a criacao do filto

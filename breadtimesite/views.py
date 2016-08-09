@@ -16,7 +16,7 @@ def exportarfeed(request):
     # Habilita os campos legiveis para aparecer no json
     feed = serializers.serialize(
         'json', list(Post.objects.all()),
-        indent=1, use_natural_foreign_keys=True, use_natural_primary_keys=True)
+        indent=2, use_natural_foreign_keys=True, use_natural_primary_keys=True)
 
     return HttpResponse(feed, content_type="application/json")
 

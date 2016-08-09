@@ -28,23 +28,16 @@ class Categoria(models.Model):
         return self.desc
 
 
-class ViewsPost(models.Model):
-    contviews = models.DecimalField(max_digits=10, decimal_places=0)
-
-    '''def __str__(self):
-        return self.contviews'''
-
-
 class Post(models.Model):
-    titulo = models.CharField(max_length=70)
+    titulo = models.CharField(max_length=80)
     conteudo = models.TextField(max_length=1500)
     data = models.DateField()
     imagem = models.ImageField(upload_to='static/img/upload')
     status = models.BooleanField()
+    contview = models.IntegerField()
     # caso Post seja rascunho ou postado
     usuario = models.ForeignKey(User)
     categoria = models.ForeignKey('Categoria', on_delete=models.CASCADE)
-    viewsPost = models.ForeignKey('ViewsPost', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.titulo
