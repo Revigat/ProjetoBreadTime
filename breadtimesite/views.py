@@ -14,9 +14,10 @@ def index(request):
 
 def exportarfeed(request):
     # Habilita os campos legiveis para aparecer no json
+    # https://docs.djangoproject.com/ja/1.9/topics/db/queries/
     feed = serializers.serialize(
-        'json', list(Post.objects.all()),
-        indent=2, use_natural_foreign_keys=True, use_natural_primary_keys=True)
+        'json', list(Post.objects.filter(status=True)),
+        indent=3, use_natural_foreign_keys=True, use_natural_primary_keys=True)
 
     return HttpResponse(feed, content_type="application/json")
 
