@@ -14,7 +14,7 @@ class CategoriaGerenciador(models.Manager):
         return self.get(desc=desc)
 
 
-class Categoria(models.Model):
+class CategoriaPost(models.Model):
     objects = CategoriaGerenciador()
     desc = models.CharField(max_length=50)
 
@@ -29,7 +29,7 @@ class Categoria(models.Model):
 
 
 class Post(models.Model):
-    titulo = models.CharField(max_length=80)
+    titulo = models.CharField(max_length=70)
     conteudo = models.TextField(max_length=1500)
     data = models.DateField()
     imagem = models.ImageField(upload_to='static/img/upload')
@@ -41,3 +41,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+    class meta:
+        unique_together = 
