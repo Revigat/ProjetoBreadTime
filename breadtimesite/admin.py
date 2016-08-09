@@ -16,6 +16,6 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('data', 'usuario')
 
 # admin.site.register(UsuarioAdmin) #Autoriza mostrar as colunas
-admin.site.register(Categoria)
+admin.site.register(CategoriaPost)
 admin.site.register(Post)
 # Autoriza a criacao do filto
