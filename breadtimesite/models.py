@@ -1,31 +1,9 @@
 # -*- coding: UTF-8 -*-
 from django.db import models
-from django.db import models
 from django.contrib.auth.models import User
 
 
 # Create your models here.
-
-
-class CategoriaGerenciador(models.Manager):
-    # Classe manager para mostrar nomes naturais no json
-    # https://docs.djangoproject.com/en/1.9/topics/serialization/#id2
-    def get_by_natural_key(self, desc):
-        return self.get(desc=desc)
-
-
-class CategoriaPost(models.Model):
-    objects = CategoriaGerenciador()
-    desc = models.CharField(max_length=50)
-
-    def natural_key(self):
-        return (self.desc)
-
-    class Meta:
-        unique_together = (('desc'),)
-
-    def __str__(self):
-        return self.desc
 
 
 class Post(models.Model):
@@ -41,3 +19,17 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+class CategoriaPost(models.Model):
+
+    desc = models.CharField(max_length=50)
+
+    def natural_key(self):
+        return (self.desc)
+
+    class Meta:
+        unique_together = (('desc'),)
+
+    def __str__(self):
+        return self.desc
