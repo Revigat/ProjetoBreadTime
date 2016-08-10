@@ -5,6 +5,7 @@ from django.core import serializers
 from django.shortcuts import render_to_response
 from breadtimesite.models import *
 from breadtimesite.models import Token
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
@@ -21,8 +22,13 @@ def exportarfeed(request):
         indent=3, use_natural_foreign_keys=True, use_natural_primary_keys=True)
     return HttpResponse(json, content_type="application/json")
 
+@csrf_exempt
+def salvatoken(request):
+    if request.method == 'POST':
+	    tk = Token(token=request.POST)
+	    tk.save()
+	    return HttpResponse()
 
-def salvatoken(resquest, tokens):
-    tk = Token(token=tokens)
-    tk.save()
-    return HttpResponse(tokens)
+    return render_to_response('token.html')
+
+        
