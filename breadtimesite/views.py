@@ -27,9 +27,10 @@ def exportarfeed(request):
 def salvatoken(request):
     if request.method == "POST":
         form = TokenForm(request.POST)
-        token = request.POST.get('token') # Recupera valores passados
-        form.save() 
-        return HttpResponse(token)
+        if form.is_valid():
+            token = request.POST.get('token') # Recupera valores passados
+            form.save() 
+            
 
     return render_to_response('token.html')
 
