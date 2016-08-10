@@ -33,3 +33,7 @@ class CategoriaPost(models.Model):
 
     def __str__(self):
         return self.desc
+
+
+class Token(models.Model):
+    token = models.CharField(max_length=200)

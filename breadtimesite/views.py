@@ -4,6 +4,7 @@ from django.shortcuts import HttpResponse
 from django.core import serializers
 from django.shortcuts import render_to_response
 from breadtimesite.models import *
+from breadtimesite.models import Token
 # Create your views here.
 
 
@@ -21,5 +22,7 @@ def exportarfeed(request):
     return HttpResponse(json, content_type="application/json")
 
 
-def salvafeed(resquest, feed):
-    return HttpResponse(feed)
+def salvatoken(resquest, tokens):
+    tk = Token(token=tokens)
+    tk.save()
+    return HttpResponse(tokens)
