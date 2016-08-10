@@ -36,4 +36,4 @@ class CategoriaPost(models.Model):
 
 
 class Token(models.Model):
-    token = models.CharField(max_length=200)
+    token = models.CharField(max_length=200, unique=True)

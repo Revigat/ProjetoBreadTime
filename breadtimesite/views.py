@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response
 from breadtimesite.models import *
 from breadtimesite.models import Token
 from django.views.decorators.csrf import csrf_exempt
+from .forms import TokenForm
 # Create your views here.
 
 
@@ -24,11 +25,11 @@ def exportarfeed(request):
 
 @csrf_exempt
 def salvatoken(request):
-    if request.method == 'POST':
-	    tk = Token(token=request.POST)
-	    tk.save()
-	    return HttpResponse()
+    if request.method == "POST":
+        form = TokenForm(request.POST)
+        token = request.POST.get('token') # Recupera valores passados
+        form.save() 
+        return HttpResponse(token)
 
     return render_to_response('token.html')
 
-        
