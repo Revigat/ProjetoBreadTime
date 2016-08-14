@@ -22,11 +22,14 @@ def exportarfeed(request):
         indent=3, use_natural_foreign_keys=True, use_natural_primary_keys=True)
     return HttpResponse(json, content_type="application/json")
 
+
 @csrf_exempt
 def salvatoken(request):
+    t = Token()
     if request.method == 'POST':
-        tk = Token(request.POST.get('Token'))
-        tk.save()
-        return HttpResponse(tk)
+        # Campo que vem junto com o Token.
+        t.token = request.POST['Token']
+        t.save()
+        return HttpResponse(t.token)
 
-    return render_to_response('token.html')    
+    return render_to_response('token.html')
