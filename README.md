@@ -1,3 +1,3 @@
-# Projeto Breadtime
-# Proposta
-Sistema web e mobile para comércio de panificação que vai inovar o setor e aproximar as "padarias" aos seus clientes
+# Breadtime - Project
+
+- Web and mobile application for bakery - under development
