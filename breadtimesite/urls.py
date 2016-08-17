@@ -5,8 +5,8 @@ import breadtimesite.views
 urlpatterns = [
     url(r'^$', breadtimesite.views.index),
     # Versão mais recente do django não suporta string
-    url(r'^exportarfeed/$', breadtimesite.views.exportarfeed),
-    #url(r'^salvatoken/(?P<tokens>[\w\S\-\_\\\/,/]+)/$', breadtimesite.views.salvatoken),
-    url(r'^salvatoken/$', breadtimesite.views.salvatoken),
+    url(r'^exportarfeed/$', breadtimesite.views.exportar_feed),
+    #url(r'^salvatoken/(?P<tokens>[\w\S\-\_\\\/,/]+)/$', breadtimesite.views.sexportar_feed),
+    url(r'^salvatoken/$', breadtimesite.views.salvar_token),
 
 ]

@@ -2,7 +2,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 # Create your models here.
 
 
@@ -13,7 +12,6 @@ class Post(models.Model):
     imagem = models.ImageField(upload_to='static/img/upload')
     status = models.BooleanField()
     contview = models.IntegerField()
-    # caso Post seja rascunho ou postado
     usuario = models.ForeignKey(User)
     categoria = models.ForeignKey('CategoriaPost', on_delete=models.CASCADE)
 
