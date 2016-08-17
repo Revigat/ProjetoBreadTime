@@ -1,3 +1,3 @@
-# Breadtime - Project
+# Breadtime
 
--Web and mobile application for bakery - under development
+- Web and mobile application for bakery - under development
