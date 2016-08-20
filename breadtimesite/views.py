@@ -16,7 +16,7 @@ def index(request):
 
 def exportar_feed(request):
     # Recupera os dados
-    posts = Post.objects.all()
+    posts = Post.objects.filter(status=True)
     # Passa da dados para a classe que serializa e limpa
     serializer = PostSerializer(posts, many=True)
     json_feed = JSONRenderer().render(serializer.data)
