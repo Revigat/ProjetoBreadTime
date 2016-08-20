@@ -8,7 +8,8 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     titulo = models.CharField(max_length=70)
     conteudo = models.TextField(max_length=1500)
-    data = models.DateField()
+    # Pega a Data do dia
+    data = models.DateField(auto_now_add=True)
     imagem = models.ImageField(upload_to='static/img/upload')
     status = models.BooleanField()
     contview = models.IntegerField()
