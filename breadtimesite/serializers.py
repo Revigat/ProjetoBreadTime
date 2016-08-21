@@ -20,8 +20,9 @@ class PostSerializer(serializers.ModelSerializer):
     # usuario = serializers.SlugRelatedField(slug_field='first_name', read_only=True)
     categoria = serializers.SlugRelatedField(slug_field='desc', read_only=True)
     # Faço a instancia da classe e digo qual campo do modelo ele se refere
-    nome_completo = UsuarioSerializer(source='usuario')
+    # Nesse caso passo para o UsuarioSerializer o source='usuario' que me retorna first_name e last_name
+    autor = UsuarioSerializer(source='usuario')
 
     class Meta:
         model = Post
-        fields = ('titulo', 'conteudo', 'data', 'imagem', 'status', 'contview', 'nome_completo', 'categoria')
+        fields = ('titulo', 'conteudo', 'data', 'imagem', 'status', 'contview', 'autor', 'categoria')
