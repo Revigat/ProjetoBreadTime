@@ -1,6 +1,8 @@
 # -*- coding: UTF-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from pyfcm import FCMNotification
 
 # Create your models here.
 
@@ -18,6 +20,24 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo
+
+# ----- Inicio signals ----- #
+'''Aqui defino o método de notificação, recebe sender(Post),
+instanciando o modelo com (INSTANCE) os dados que foram enviados'''
+
+
+def enviar_notificacao(sender, instance, **kwargs):
+    # Instância da classe FCMNotification com parametro da API
+    push_service = FCMNotification(api_key="AIzaSyDXv8_47S0_g64d5sHvwZWpH98gyJDUhtc")
+    # Método que passa os parâmetros de configuração do alerta do push
+    push_service.notify_topic_subscribers(topic_name="bread",
+                                          sound=True,
+                                          color=None,
+                                          message_body=instance.titulo)
+
+# Chamando a função do signals que invoca o metodo para enviar a notificação
+post_save.connect(enviar_notificacao, sender=Post)
+# ----- Fim signals ----- #
 
 
 class CategoriaPost(models.Model):
