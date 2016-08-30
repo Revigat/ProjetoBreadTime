@@ -23,19 +23,27 @@ class Post(models.Model):
 
 # ----- Inicio signals ----- #
 '''Aqui defino o método de notificação, recebe sender(Post),
-instanciando o modelo com (INSTANCE) os dados que foram enviados'''
+instanciando o modelo com (INSTANCE) recuperando os dados que foram enviados'''
 
 
 def enviar_notificacao(sender, instance, **kwargs):
-    # Instância da classe FCMNotification com parametro da API
+    # Instância da classe FCMNotification com parâmetro da API
     push_service = FCMNotification(api_key="AIzaSyDXv8_47S0_g64d5sHvwZWpH98gyJDUhtc")
     # Método que passa os parâmetros de configuração do alerta do push
-    push_service.notify_topic_subscribers(topic_name="bread",
-                                          sound=True,
-                                          color=None,
-                                          message_body=instance.titulo)
+    #topic_condition = "'bread' in topics"
 
-# Chamando a função do signals que invoca o metodo para enviar a notificação
+    #topic_condition = "'%s' in topics" % instance.categoria.desc
+
+    #if instance.categoria.desc == 'bread':
+    push_service.notify_topic_subscribers(topic_name='%s' % instance.categoria.desc,
+                                            sound=True,
+                                            color=None,
+                                            message_body=instance.titulo,
+                                            #condition=topic_condition
+                                            )
+
+
+# Chamando a função do signals que invoca o método para enviar a notificação
 post_save.connect(enviar_notificacao, sender=Post)
 # ----- Fim signals ----- #
 

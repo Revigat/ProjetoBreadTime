@@ -15,7 +15,7 @@ def index(request):
 
 
 def exportar_feed(request):
-    # Recupera os dados
+    # Recupera os dados somente os que atende a condição
     posts = Post.objects.filter(status=True)
     # Passa da dados para a classe que serializa e limpa
     serializer = PostSerializer(posts, many=True)
