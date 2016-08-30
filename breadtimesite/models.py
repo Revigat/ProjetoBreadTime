@@ -30,11 +30,7 @@ def enviar_notificacao(sender, instance, **kwargs):
     # Instância da classe FCMNotification com parâmetro da API
     push_service = FCMNotification(api_key="AIzaSyDXv8_47S0_g64d5sHvwZWpH98gyJDUhtc")
     # Método que passa os parâmetros de configuração do alerta do push
-    #topic_condition = "'bread' in topics"
-
-    #topic_condition = "'%s' in topics" % instance.categoria.desc
-
-    #if instance.categoria.desc == 'bread':
+    # Recebe o que vem da categoria e passa para a função de envio, obs: Tiramos o uso do IF
     push_service.notify_topic_subscribers(topic_name='%s' % instance.categoria.desc,
                                             sound=True,
                                             color=None,
