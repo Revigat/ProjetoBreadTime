@@ -12,7 +12,7 @@ class Post(models.Model):
     conteudo = models.TextField(max_length=1500)
     # Pega a Data do dia
     data = models.DateField(auto_now_add=True)
-    imagem = models.ImageField(upload_to='static/img/upload')
+    imagem = models.ImageField(upload_to='static/img/uploads')
     status = models.BooleanField()
     contview = models.IntegerField()
     usuario = models.ForeignKey(User)
